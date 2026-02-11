@@ -1,0 +1,9 @@
+FROM postgis/postgis:16-3.5-alpine
+
+# Optional: default values (can be overridden)
+# ENV POSTGRES_DB=terangadb
+# ENV POSTGRES_USER=postgres
+# ENV POSTGRES_PASSWORD=awa_password
+
+# Copy init scripts (executed on first container start)
+COPY initdb /docker-entrypoint-initdb.d

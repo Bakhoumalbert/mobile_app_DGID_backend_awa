@@ -12,24 +12,24 @@ services:
     ports:
       - "5432:5432"
 
-  app:
-    image: awa82817/teranga-collecte-backend:5.1
-    restart: unless-stopped
-    environment:
-      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
-      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
-      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
-      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
-      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
-      JWT_EXPIRATION_TIME: ${JWT_EXPIRATION_TIME}
-      SPRING_MAIL_USERNAME: ${SPRING_MAIL_USERNAME}
-      SPRING_MAIL_PASSWORD: ${SPRING_MAIL_PASSWORD}
-      SPRING_MAIL_HOST: ${SPRING_MAIL_HOST}
-      SPRING_MAIL_PORT: ${SPRING_MAIL_PORT}
-    ports:
-      - "8081:8081"
-    depends_on:
-      - db
+#  app:
+#    image: awa82817/teranga-collecte-backend:5.1
+#    restart: unless-stopped
+#    environment:
+#      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+#      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+#      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+#      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+#      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+#      JWT_EXPIRATION_TIME: ${JWT_EXPIRATION_TIME}
+#      SPRING_MAIL_USERNAME: ${SPRING_MAIL_USERNAME}
+#      SPRING_MAIL_PASSWORD: ${SPRING_MAIL_PASSWORD}
+#      SPRING_MAIL_HOST: ${SPRING_MAIL_HOST}
+#      SPRING_MAIL_PORT: ${SPRING_MAIL_PORT}
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      - db
 
   pgadmin:
     image: dpage/pgadmin4
@@ -43,12 +43,12 @@ services:
       - db
 
   # Frontend (Angular + Nginx)
-  frontend:
-    image: awa82817/teranga-collecte-frontend:3
-    ports:
-      - "4200:80"
-    depends_on:
-      - app
+#  frontend:
+#    image: awa82817/teranga-collecte-frontend:3
+#    ports:
+#      - "4200:80"
+#    depends_on:
+#      - app
 
 
 volumes:
